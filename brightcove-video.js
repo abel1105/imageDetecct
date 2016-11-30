@@ -134,7 +134,7 @@ videojs.plugin('pluginAd', function() {
             overlay.addEventListener("click", detectClick);
             var unbind = function(){
                 overlay.removeEventListener("click", detectClick);  // unbind 廣告
-                console.log("unbind");
+                console.log("unbind2");
             }
         }
     });
