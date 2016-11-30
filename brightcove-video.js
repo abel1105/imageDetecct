@@ -125,13 +125,17 @@ videojs.plugin('pluginAd', function() {
         var StartSkipAd = function () {
             clearInterval(CountDownSkip);
             overlay.innerHTML = "Skip Ad 〉";
-            overlay.onclick = function () {
+            var detectClick = function () {
                 is_ad_is_serving = false;
                 player.ima3.adsManager.stop();
                 overlay.parentElement.removeChild(overlay);
-                overlay.removeEventListener("click", overlay.onclick);  // unbind 廣告
-                console.log("unbind");
+                unbind();
             };
+            overlay.addEventListener("click", detectClick);
+            var unbind = function(){
+                overlay.removeEventListener("click", detectClick);  // unbind 廣告
+                console.log("unbind");
+            }
         }
     });
     // 廣告播25%的時候跳出
