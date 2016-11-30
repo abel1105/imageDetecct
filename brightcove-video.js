@@ -130,6 +130,7 @@ videojs.plugin('pluginAd', function() {
                 player.ima3.adsManager.stop();
                 overlay.parentElement.removeChild(overlay);
                 overlay.removeEventListener("click", overlay.onclick);  // unbind 廣告
+                console.log("unbind");
             };
         }
     });
