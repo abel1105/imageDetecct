@@ -129,6 +129,7 @@ videojs.plugin('pluginAd', function() {
                 is_ad_is_serving = false;
                 player.ima3.adsManager.stop();
                 overlay.parentElement.removeChild(overlay);
+                overlay.removeEventListener("click", overlay.onclick);  // unbind 廣告
             };
         }
     });
