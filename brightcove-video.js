@@ -4,7 +4,7 @@
  */
 var is_ad_is_serving = false;
 
-videojs.plugin('tnl-index', function () {
+videojs.plugin('tnl_index', function () {
     var player = this,
         playVideo = function(evt){
             if(evt.data === "playVideo" && !is_ad_is_serving){
